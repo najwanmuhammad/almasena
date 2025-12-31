@@ -18,20 +18,20 @@ def set_rc_channel_pwm(pitch, roll, throttle, yaw, forward):
     Mapping Channel ArduSub Standar:
     Ch 1 = Pitch (Tilt)
     Ch 2 = Roll  (Kiri/Kanan)
-    Ch 3 = Throttle (Naik/Turun) -> INI YANG MENGGERAKKAN THRUSTER 5 & 6
+    Ch 3 = Throttle (Naik/Turun)
     Ch 4 = Yaw   (Putar)
     Ch 5 = Forward (Maju/Mundur)
-    Ch 6 = Lateral (roll)
+    Ch 6 = Lateral (Roll)
     """
     master.mav.rc_channels_override_send(
         master.target_system,
         master.target_component,
         pitch,      # Channel 1 (Pitch)
         roll,       # Channel 2 (Roll)
-        throttle,   # Channel 3 (Throttle - Vertikal)
+        throttle,   # Channel 3 (Throttle)
         yaw,        # Channel 4 (Yaw)
-        forward, 
-        0, 0, 0, # Channel 6-8 (Tidak dipakai)
+        forward,    # Channel 5 (Forward)
+        0, 0, 0, # Channel 6-8
         0, 0, 0, 0, 0, 0, 0, 0 # Channel 9-16
     )
 
